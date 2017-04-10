@@ -1,6 +1,6 @@
 <% if @article.errors.any? %>
 
-<h2>The following errors prevented the article from getting created</h2>
+<h2>The following errors prevented the article from being edited</h2>
 
 <ul>
 
@@ -14,7 +14,7 @@
 
 <% end %>
 
-<h3> Please create an article </h3>
+<h3> Please edit the article </h3>
 
 <%= form_for @article do |f| %>
 
@@ -34,3 +34,4 @@
 
 <%end%>
 
+<%= link_to 'Back to Articles Page', articles_path %>
