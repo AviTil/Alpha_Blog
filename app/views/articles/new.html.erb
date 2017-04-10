@@ -1,3 +1,5 @@
+<h1> Please create an article </h1>
+
 <% if @article.errors.any? %>
 
 <h2>The following errors prevented the article from getting created</h2>
@@ -14,7 +16,6 @@
 
 <% end %>
 
-<h3> Please create an article </h3>
 
 <%= form_for @article do |f| %>
 
@@ -33,4 +34,6 @@
 </p>
 
 <%end%>
+
+<%= link_to 'Show All Articles', articles_path %>
 
