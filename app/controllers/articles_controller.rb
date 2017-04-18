@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
       flash[:notice]="Your article was successfully edited"
       redirect_to article_path(@article)
     else
-      render 'new'
+      render 'edit'
     end
   end
   
@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
       flash[:notice]="Your article was successfully saved"
       redirect_to article_path(@article)
     else
-      render 'edit'
+      render 'new'
     end
   end
   
