@@ -6,8 +6,12 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
-  
+Copyright 2017
+
+<%= render 'layouts/navigation' %>
+
   <% flash.each do |name, msg| %>
 
 <ul>
@@ -18,7 +22,11 @@
 
 <% end %>
 
-<%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
+
+<%= render "layouts/footer" %>
 
 </body>
 </html>

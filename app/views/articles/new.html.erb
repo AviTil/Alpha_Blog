@@ -1,8 +1,8 @@
-<h1> Please create an article </h1>
+<h3 style="color:dimgray; font-size:1.7em;"> Please create an article </h3></br>
 
 <% if @article.errors.any? %>
 
-<h2>The following errors prevented the article from getting created</h2>
+<div class="alert alert-danger" role="alert">The following errors prevented the article from getting created</div>
 
 <ul>
 
@@ -16,22 +16,21 @@
 
 <% end %>
 
-
 <%= form_for @article do |f| %>
 
 <p>
   <%= f.label :title %> <br/>
-  <%= f.text_field :title %> 
+  <%= f.text_field :title, placeholder: "Title of Article", autofocus: true %> 
 </p>
 
 <p>
   <%= f.label :description %> <br/>
-  <%= f.text_area :description %> 
+  <%= f.text_area :description, placeholder: "Description of Article", autofocus: true %> 
 </p>
 
 <p>
-  <%= f.submit %>
-</p>
+  <%= f.submit class: "btn btn-primary btn-lg" %>
+</p></br>
 
 <%end%>
 

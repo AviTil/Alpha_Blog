@@ -1,8 +1,8 @@
-<h1> The article you saved was </h1>
+<h3 style="color:dimgray; font-size:1.5em; font-weight:bold"> The article you saved was </h3><br/>
 
-<p> Title: <%= @article.title %> </p> <br/>
-<p> Description: <%= @article.description %>
-</p>
+<p> Title: <%= @article.title %> </p> 
+<p> Description: <%= simple_format(@article.description) %>
+</p></br>
 
-<%= link_to 'Back to Articles Page', articles_path %> <br/><br/>
+<%= link_to 'Back to Articles Page', articles_path %> |
 <%= link_to 'Edit Article', edit_article_path %>

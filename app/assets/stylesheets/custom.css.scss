@@ -1,2 +1,27 @@
+$navbar-default-bg: aliceblue;
+
+#logo {float: left; color: black; font-size: 1.5em; text-transform: uppercase; font-weight: bold;}
+
+.center {text-align: center;}
+
+.jumbotron {background-image: asset-url("azures.jpg");
+            background-size: cover;
+            height: 700px;}
+
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.btn-xlarge {font-size: 1.7em; background-color: dimgray;}
+.btn-xlarge:hover {font-size: 1.7em; background-color: dimgray;}
+
+.btn-lg {background-color: aliceblue; color: dimgray;}
+
+.btn-lg:hover {background-color: aliceblue; color: dimgray;}
+
+.footer {border-top-style: solid; border-top-width: thin; padding-top: 25px;}
+
+.article-actions {padding: 15px 5px; margin-bottom: 10px; border-bottom-style: solid; 
+                  border-bottom-color: dimgray; border-bottom-width: thin;}
+                  
+.indexdesc {margin-left: 0px;}
