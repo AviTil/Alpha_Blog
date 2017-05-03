@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users
+  resources :users, except: [:new]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
   
   resources :articles
+  
+  get 'signup' => 'users#new'
   
 
   # Example of regular route:
