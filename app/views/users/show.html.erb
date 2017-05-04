@@ -1,6 +1,9 @@
+<h3 style="text-transform: capitalize;"> Welcome to <%= @user.username %>'s page</h3>
 <p id="notice"><%= notice %></p>
 
-<p>
+<%= gravatar_for @user %>
+
+<p style="padding-top: 10px;">
   <strong>Username:</strong>
   <%= @user.username %>
 </p>
@@ -8,7 +11,11 @@
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
-</p>
+</p></br>
+
+<h4 style="border-bottom: 1px solid; text-transform: capitalize;"><%= @user.username %>'s articles</h4></br>
+
+<%= render 'userarticles' %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
