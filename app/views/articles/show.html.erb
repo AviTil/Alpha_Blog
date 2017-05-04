@@ -1,10 +1,15 @@
-<h3 style="color:dimgray; font-size:1.5em; font-weight:bold"> The article you saved was </h3><br/>
+<h3 style="color:dimgray; font-size:1.5em; font-weight:bold"> Article Details </h3><br/>
 
-<p> Title: <%= @article.title %> </p> 
-<p> Description: <%= simple_format(@article.description) %>
-</p></br>
-
-<%= link_to 'Back to Articles Page', articles_path %> |
-<%= link_to 'Edit Article', edit_article_path %> |
-
-<a href="http://www.rate8.io" target="_blank">Visit Rate8</a>
+<p> <div style="font-weight:bold;">Title: </div> <%= @article.title %> </p> 
+<p> <div style="font-weight:bold;">Description: </div> <%= simple_format(@article.description) %>
+</p>
+<p> <div style="font-weight:bold;">Author:</div>  
+    <% if @article.user %>
+    <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
+    <% end %>
+    
+</br>
+      <div style="padding-top: 15px;">
+      <%= link_to 'Back to Articles Page', articles_path %> |
+      <%= link_to 'Edit Article', edit_article_path %> |
+      </div>
