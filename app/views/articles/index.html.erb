@@ -1,5 +1,7 @@
 <h3 style="color:dimgray; font-size:1.7em; font-weight:bold; text-align:center;">Articles Catalogue</h3></br>
-
+<div align="center">
+<%= will_paginate %>
+</div>
   <% @articles.each do |a| %>
   
   <div class="row">
@@ -22,4 +24,7 @@
   </div>
   
   <% end %>
+  <div align="center">
+  <%= will_paginate %>
+  </div>
   
