@@ -6,8 +6,9 @@
   
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
-  
-    <%= link_to a.title, article_path(a) %> 
+    <div style="font-size:1.5em; padding-bottom: 10px; padding-top: 50px; text-transform:capitalize;">
+    <%= link_to a.title, article_path(a) %>
+    </div>
       <div class="indexdesc">
       <%= truncate(a.description, length: 100) %>
         <div class=article-meta-details>
@@ -15,11 +16,14 @@
                 <%= time_ago_in_words(a.created_at) %> ago</small>
         </div>
       </div>
+        
+        <% if logged_in? && current_user==a.user %>
         <div class="article-actions">
         <%= link_to 'Edit', edit_article_path(a), class: "btn btn-xs btn-success" %>
         <%= link_to 'Delete', article_path(a), method: :delete, class: "btn btn-xs btn-danger" %>
         </div>
-      
+        <% end %>
+        
     </div>
   </div>
   

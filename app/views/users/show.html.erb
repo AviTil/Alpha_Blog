@@ -25,5 +25,9 @@
 <%= will_paginate @user_articles %>
 </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="article-actions">
+<% if logged_in? && current_user==@user %>
+<%= link_to 'Edit User', edit_user_path(@user), class: "btn btn-xs btn-success" %> |
+<% end %>
+<%= link_to 'Back to Users', users_path, class: "btn btn-xs btn-danger" %>
+</div>
