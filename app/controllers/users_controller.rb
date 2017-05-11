@@ -28,8 +28,9 @@ before_action :require_same_user, only: [:edit, :update, :destroy]
     @user = User.new(user_params)
 
       if @user.save
+        session[:user_id]=@user.id
         flash[:notice] = 'Welcome to the Alpha Blog' 
-        redirect_to users_path
+        redirect_to user_path(@user)
       else
         render 'new'
       end
@@ -65,6 +66,7 @@ before_action :require_same_user, only: [:edit, :update, :destroy]
     def user_params
       params.require(:user).permit(:username, :email, :password)
     end
+    
     
     def require_same_user
       if current_user != @user
