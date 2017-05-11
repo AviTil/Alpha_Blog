@@ -26,8 +26,9 @@
 </div>
 
 <div class="article-actions">
-<% if logged_in? && current_user==@user %>
+<% if logged_in? && (current_user==@user || current_user.admin?) %>
 <%= link_to 'Edit User', edit_user_path(@user), class: "btn btn-xs btn-success" %> |
+<%= link_to 'Delete User', user_path(@user), method: :delete, class: "btn btn-xs btn-danger" %> |
 <% end %>
-<%= link_to 'Back to Users', users_path, class: "btn btn-xs btn-danger" %>
+<%= link_to 'Back to Users', users_path, class: "btn btn-xs btn-success" %>
 </div>

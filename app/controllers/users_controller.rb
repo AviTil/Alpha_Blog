@@ -50,10 +50,9 @@ before_action :require_same_user, only: [:edit, :update, :destroy]
   
   def destroy
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:danger]="The user and all articles relating to the user have been deleted"
+    redirect_to users_path
+
   end
 
   private
@@ -69,7 +68,7 @@ before_action :require_same_user, only: [:edit, :update, :destroy]
     
     
     def require_same_user
-      if current_user != @user
+      if current_user != @user and !current_user.admin?
         flash[:notice]="You may only edit your own account"
         redirect_to users_path
       end
