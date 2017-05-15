@@ -9,6 +9,13 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
       post_via_redirect categories_path, category: {name: "sports"} end
     assert_template 'categories/index'
     assert_match "sports", response.body
-    
+  end
+  
+  test "invalid category does not get submitted" do
+    get new_category_path
+    assert_template 'categories/new'
+    assert_difference 'Category.count', 0 do
+      post categories_path, category: {name: ""} end
+    assert_template 'categories/new'
   end
 end
