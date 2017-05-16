@@ -28,11 +28,17 @@
   <%= f.text_area :description, placeholder: "Description of Article", autofocus: true %> 
 </p>
 
+<p style="text-transform: capitalize;">
+  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |x| %>
+  <% x.label(class: "checkbox-inline") {x.check_box(class: "checkbox")+ x.text} %>
+  <% end %>
+</p></br>
+
 <p>
   <%= f.submit class: "btn btn-primary btn-lg" %>
 </p></br>
 
-<%end%>
+<% end %>
 
 <%= link_to 'Show All Articles', articles_path %>
 
