@@ -1,0 +1,11 @@
+<h3 style="text-transform:capitalize; color:slategrey; border-bottom: 1px solid grey; padding-bottom: 10px;">Category: <%= @category.name %></h3>
+
+<h5>List of Articles</h5>
+
+<% if @category.articles.any? %>
+<% @category.articles.each do |f| %>
+
+<ul class="btn btn-xs btn-lg", style="margin-top: 15px; margin-bottom: 15px">
+<%= link_to f.title, article_path(f) %></ul>
+<% end %>
+<% end %>

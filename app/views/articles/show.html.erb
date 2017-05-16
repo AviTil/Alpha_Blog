@@ -9,6 +9,13 @@
     <% end %>
     
 </br>
+    <p style="font-weight:bold;">Categories:</p>
+    <% if @article.categories.any? %>
+    <% @article.categories.each do |a| %>
+    <li class="btn btn-xs btn-lg", style="text-transform:capitalize; font-weight:bold;"> <%= link_to a.name, category_path(a) %> </li>
+    <% end %>
+    <% end %>
+
       <div style="padding-top: 15px;">
       <%= link_to 'Back to Articles Page', articles_path %> |
       <% if logged_in? && (current_user==@article.user || current_user.admin?) %>

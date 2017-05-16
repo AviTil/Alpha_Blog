@@ -2,7 +2,8 @@
 <div align="center">
 <%= will_paginate %>
 </div>
-  <% @articles.each do |a| %>
+
+<% @articles.each do |a| %>
   
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
@@ -11,6 +12,9 @@
     </div>
       <div class="indexdesc">
       <%= truncate(a.description, length: 100) %>
+        
+       
+        
         <div class=article-meta-details>
         <small>Created By: <%= a.user.username if a.user %>,
                 <%= time_ago_in_words(a.created_at) %> ago</small>
@@ -26,8 +30,9 @@
         
     </div>
   </div>
-  
   <% end %>
+  
+  
   <div align="center">
   <%= will_paginate %>
   </div>
