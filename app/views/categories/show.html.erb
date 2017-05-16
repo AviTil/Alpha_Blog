@@ -4,8 +4,9 @@
 
 <% if @category.articles.any? %>
 <% @category.articles.each do |f| %>
-
-<ul class="btn btn-xs btn-lg", style="margin-top: 15px; margin-bottom: 15px">
-<%= link_to f.title, article_path(f) %></ul>
+<div class="row">
+  <li class="btn btn-xs btn-lg", style="margin: 15px;">
+  <%= link_to f.title, article_path(f) %></li>
+</div>
 <% end %>
 <% end %>
