@@ -5,6 +5,20 @@ class CategoriesController < ApplicationController
     @categories=Category.all
   end
 
+  def edit
+    @category=Category.find(params[:id])
+  end
+  
+  def update
+    @category=Category.find(params[:id])
+    if @category.update(category_params)
+      flash[:notice]="Category Name was successfully updated"
+      redirect_to category_path(@category)
+    else
+      render 'edit'
+    end  
+  end
+  
   def new
     @category=Category.new
   end
@@ -32,7 +46,7 @@ class CategoriesController < ApplicationController
   
   def require_admin
     if !logged_in? || (logged_in? && !current_user.admin?)
-      flash[:notice]="You need to be logged in as admin to create a category"
+      flash[:notice]="You need to be logged in as admin to create or update a category"
       redirect_to categories_path
     end
   end

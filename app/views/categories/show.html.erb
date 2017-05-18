@@ -1,6 +1,10 @@
 <h3 style="text-transform:capitalize; color:slategrey; border-bottom: 1px solid grey; padding-bottom: 10px;">Category: <%= @category.name %></h3>
 
-<h5>List of Articles</h5>
+<% if logged_in? && current_user.admin? %>
+<%= link_to "Edit Category Name", edit_category_path(@category), class: "btn btn-success btn-xs" %></br>
+<% end %>
+
+<h5 style="font-weight:bold;">List of Articles</h5>
 
 <% if @category.articles.any? %>
 <% @category.articles.each do |f| %>
